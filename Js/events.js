@@ -12,12 +12,14 @@ export default function Events({controls, sound, timer}){
     controls.play()
     timer.countdown()
     sound.pressButton()
+    sound.bgAudio.play()
   })
   
   buttonPause.addEventListener('click', function() {
     controls.pause()
     timer.hold()
     sound.pressButton()
+    sound.bgAudio.pause()
   })
   
   buttonStop.addEventListener('click', function() {
@@ -29,13 +31,14 @@ export default function Events({controls, sound, timer}){
   buttonSoundOff.addEventListener('click', function() {
     buttonSoundOn.classList.remove('hide')
     buttonSoundOff.classList.add('hide')
-    sound.bgAudio.pause()
+    sound.bgAudio.play()
+    
   })
   
   buttonSoundOn.addEventListener('click', function() {
     buttonSoundOn.classList.add('hide')
     buttonSoundOff.classList.remove('hide')
-    sound.bgAudio.play()
+    sound.bgAudio.pause()
   })
   
   buttonSet.addEventListener('click', function() {
