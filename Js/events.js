@@ -26,6 +26,7 @@ export default function Events({controls, sound, timer}){
     controls.reset()
     timer.reset()
     sound.pressButton()
+    sound.bgAudio.pause()
   })
   
   buttonSoundOff.addEventListener('click', function() {
